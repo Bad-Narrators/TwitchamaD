@@ -17,11 +17,18 @@
 - 2
 
 #### Required:
-- 1
-- 2
+- Management, creation and voting of polls via commands
+- Companion comments on events (like subscriptions or donations)
+- Multiple channels support
+- Chat supervision with moderator permits
 
 #### In Discussion:
-- 1
+- Editable username
+- 2
+
+### TO-DO (not functions):
+- Change the bot propic
 - 2
 
 ---
+
