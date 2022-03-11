@@ -1,5 +1,5 @@
 # TwitchamaD-Bot
-####*Bot companion for the TwitchamaD section of Tiamad*
+#### *Bot companion for the TwitchamaD section of Tiamad*
 
 ---
 
