@@ -1,5 +1,5 @@
-## TwitchamaD
-#### *Bundle of services that integrate the Twitch API to TiamaD*
+## TiamaD-Bot
+#### *Bot companion for the TwitchamaD section of Tiamad*
 
 ---
 
@@ -25,4 +25,3 @@
 - 2
 
 ---
-
