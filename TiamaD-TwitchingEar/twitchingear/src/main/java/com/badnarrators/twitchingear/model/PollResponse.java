@@ -1,15 +1,14 @@
 package com.badnarrators.twitchingear.model;
 
 import java.util.ArrayList;
-
-import org.apache.tomcat.jni.Poll;
+import java.util.List;
 
 public class PollResponse {
-    
+
     private final String id;
     private final String question;
-    private final ArrayList<String> answers;
-    private final ArrayList<Integer> votes;
+    private final List<String> answers;
+    private final List<Integer> votes;
 
     public PollResponse() {
         this.id = "0";
@@ -18,13 +17,12 @@ public class PollResponse {
         this.votes = new ArrayList<>();
     }
 
-    public PollResponse(String id, String question, ArrayList<String> answers, ArrayList<Integer> votes) {
+    public PollResponse(String id, String question, List<String> answers, List<Integer> votes) {
         this.id = id;
         this.question = question;
         this.answers = answers;
         this.votes = votes;
     }
-
 
     public String getId() {
         return id;
@@ -34,11 +32,11 @@ public class PollResponse {
         return question;
     }
 
-    public ArrayList<String> getAnswers() {
+    public List<String> getAnswers() {
         return answers;
     }
 
-    public ArrayList<Integer> getVotes() {
+    public List<Integer> getVotes() {
         return votes;
     }
 

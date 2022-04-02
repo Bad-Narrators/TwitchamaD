@@ -11,26 +11,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping("/api/poll")
 public class PollController {
-    
+
     private final AtomicLong counter = new AtomicLong();
 
-    @GetMapping(value="/get")
+    @GetMapping(value = "/get")
     @ResponseBody
     public PollResponse response(@RequestParam(required = false) String id) {
-        if(id == null) {
-            return new PollResponse ();
+        if (id == null) {
+            return new PollResponse();
         }
 
-        //Test variables, will be changed later
+        // Test variables, will be changed later
         String question = "Vecchia Londra o Messicano?";
-        ArrayList<String> answers = new ArrayList<String>();
+        ArrayList<String> answers = new ArrayList<>();
         answers.add("Vecchia Londra");
         answers.add("Messicano");
-        ArrayList<Integer> votes = new ArrayList<Integer>();
+        ArrayList<Integer> votes = new ArrayList<>();
         votes.add(250);
         votes.add(12);
 
