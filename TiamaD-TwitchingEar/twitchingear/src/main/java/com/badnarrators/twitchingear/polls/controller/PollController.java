@@ -54,6 +54,8 @@ public class PollController {
     @RequestMapping(method=RequestMethod.POST, value="/setRepository")
     public PollResponse setRepository(@RequestBody List<Poll> repo){
         context.getBean(PollRepository.class).setRepository(repo);
-        return new PollResponse("1", "Successful");
+        return new PollResponse("1", "Successful", null, null);
     }
+
+    
 }
