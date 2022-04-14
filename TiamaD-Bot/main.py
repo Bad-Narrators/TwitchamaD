@@ -1,6 +1,7 @@
 from twitchio.ext import commands
 from dotenv import load_dotenv
 from os import environ
+import requests
 
 
 class Bot(commands.Bot):
@@ -40,6 +41,32 @@ class Bot(commands.Bot):
         # Sending a reply back to the channel is easy... Below is an example.
         await ctx.send(f'Hello {ctx.author.name}!')
 
+    # twitch command to create a poll
+    @commands.command()
+    async def createPoll(self, ctx: commands.Context, *, question):
+        url = "http:localhost:8080/api/poll/getByQuestion?question="+question
+        response = requests.get(url)
+        if response.status_code == 200:
+            await ctx.send(f'Poll already exists!')
+        else:
+            url = "http:localhost:8080/api/poll/create?question="+question
+            response = requests.get(url)
+            if response.status_code == 200:
+                await ctx.send(f'Poll created!')
+            else:
+                await ctx.send(f'Poll not created!')
+        await ctx.send(f'Poll: {question}')
+
+    # twitch command to add a vote to a poll
+    @commands.command()
+    async def vote(self, ctx: commands.Context, *, vote):
+        url = "http:localhost:8080/api/poll/vote?question="+vote
+        response = requests.get(url)
+        if response.status_code == 200:
+            await ctx.send(f'Vote added!')
+        else:
+            await ctx.send(f'Vote not added!')
+        await ctx.send(f'Vote: {vote}')
 
 load_dotenv()
 token = environ['ACCESS_TOKEN']
