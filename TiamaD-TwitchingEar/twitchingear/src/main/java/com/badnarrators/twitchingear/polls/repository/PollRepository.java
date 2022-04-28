@@ -14,11 +14,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class PollRepository extends AbstractRepository<Poll>{
-    
-    
-    public PollRepository(){
-        this.resetRepository();
-    }
+
+ /*    public PollRepository(){
+        this.repository = new LinkedList<Poll>();
+    } */
 
     public void resetRepository(){
         this.repository = new LinkedList<Poll>();

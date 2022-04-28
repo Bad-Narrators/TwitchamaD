@@ -1,5 +1,6 @@
 package com.badnarrators.twitchingear.polls.entity;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -8,6 +9,9 @@ public class Poll {
     private UUID id;
     private String question;
     private Map<Integer, PollVote> answers;
+    private Date creationDate;
+    private Date deletionDate;
+
     private List<String> targets;    
 
     public Poll(String question, Map<Integer, PollVote> answers, List<String> targets) {
@@ -39,5 +43,21 @@ public class Poll {
 
     public void setTargets(List<String> targets) {
         this.targets = targets;
+    }
+
+    public Date getCreationDate() {
+        return this.creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public Date getDeletionDate() {
+        return this.deletionDate;
+    }
+
+    public void setDeletionDate(Date deletionDate) {
+        this.deletionDate = deletionDate;
     }
 }

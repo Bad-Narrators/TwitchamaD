@@ -12,6 +12,7 @@ import com.badnarrators.twitchingear.polls.repository.PollRepository;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
@@ -27,8 +28,7 @@ public class TwitchingearApplication {
 		List<String> t = new ArrayList<String>();
 		t.add("Twitch");
 		Poll p = new Poll("Vecchia londra o messicano?", m, t);
-		PollController.getContext().getBean(PollRepository.class).getRepository().add(p);
-
+		PollController.getRepository().getRepository().add(p);
 	}
 
 }
